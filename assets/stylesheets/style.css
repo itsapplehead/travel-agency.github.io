@@ -1,0 +1,412 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+    
+    color: #00095e;
+}
+
+/*  ============
+    HEADER
+    ==========
+ */
+
+.header {
+    padding: 15px 40px 15px 40px;
+    width: 100%;
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    position: fixed;
+    
+    top: 0;
+    z-index: 2; 
+
+}
+
+.nav-links-list-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin-right: 20px;
+    /* background-color: aqua; */
+    
+}
+
+
+.nav-links-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 60px;
+    /* background-color: green; */
+
+}
+.nav-link {
+    text-decoration: none;
+    font-family: "Josefin Sans", sans serif;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    color: #00095e;
+    position: relative;
+    padding: 0 18px;
+
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    background-color: #007bff;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.nav-link:hover {
+    color: #007bff;
+}
+.nav-link:hover::after {
+    width: 85%;
+}
+
+/*
+    ========================
+    dropdown menu in header 
+    ========================
+*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00095e;
+    width: 170px;
+    height: 171px;
+    margin: 20px 0;
+    z-index: 1;
+
+}
+.dropdown-content a {
+    display: block;
+
+    color: #fff;
+    text-decoration: none;
+    font-family: "Josefin Sans", sans serif;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    margin: 10px  
+  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 
+    ===========
+    header btn
+    ===========
+*/
+
+.header-btn {
+    width: 218px;
+    height: 50px;
+    background-color: rgb(255,200,0);
+    color: #fff;
+    font-family: "Josefin Sans", sans serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    
+}
+
+
+.header-btn i {
+    width: 17px;
+    height: 17px;
+    color: #fff !important;
+}
+
+/* 
+    ================
+    heading section
+    ================
+*/
+
+.heading {
+    margin-top: 100px;
+    text-align: center;
+}
+.heading h1 {
+
+    font-size: 60px; 
+    font-family:"Josefin Sans",sans-serif;
+    font-weight: 600;
+    padding-top: 110px;
+}
+.heading p {
+    font-size: 20px;
+    font-family: "Roboto",sans-serif;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.background-slide,
+.about-us-info button {
+    width: 250px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 550;
+    background-color: #00095e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.background-slide::before,
+.about-us-info button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgb(255,200,0);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: transform 300ms ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.background-slide:hover::before,
+.background-slide:focus::before,
+.about-us-info button:hover::before,
+.about-us-info button:focus::before {
+    transform: scaleY(1);
+}
+.background-slide,
+.about-us-info button {
+    z-index: 1;
+}
+
+
+/* 
+    =================
+    background-image
+    =================
+
+*/
+
+.background {
+    position: relative;
+
+}
+.background img {
+    width: 100%;
+}
+
+.background-bus{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    animation: movingbusforward 15s infinite;
+   
+}
+
+@keyframes movingbusforward {   
+    10%{
+        left: 30%;
+    }60%{
+        left: 10%;
+    }
+}
+
+/* 
+    ================
+    upcoming events 
+    ================
+*/
+.upcoming-events {
+    margin: 100px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Josefin Sans",sans-serif;
+}
+.upcoming-events span {
+    color: #7ea0ff;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+}
+.upcoming-events h2,
+.about-us-info h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+
+
+
+/* 
+    ====================
+        !CAROUSEL
+    ====================
+*/
+
+
+#carouselExampleControls {
+    margin: auto;
+    width: 85%;
+}
+
+.card-body {
+    font-family: "Josefin Sans",sans-serif;
+    
+}
+.card-body h5 {
+    color: #00095e;
+}
+
+.card-body p {
+    color: #7ea0ff;
+}
+
+.card-body button {
+    background: #00095e;
+}
+
+.card-body button:hover {
+    background: rgb(255,200,0);
+    border: none;
+}
+
+/* 
+    ABOUT US
+*/
+
+.about-us {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Josefin Sans",sans-serif;
+}
+.about-us-img img {
+    margin-right: 100px;
+}
+
+.about-us-info {
+    width: 35%;
+}
+.about-us-info span {
+    color: #7ea0ff;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.about-us-info p {
+    font-family: "Roboto",sans-serif;
+    color: #677f8b;
+    font-size: 16px;
+}
+.about-us-info button {
+    margin-top: 25px; 
+}
+
+
+/* 
+        footer
+*/
+footer {
+    margin-top: 50px;
+}
+.myfooter {
+    background-color: #00095e;
+    padding-top: 50px;
+    font-family: "Josefin Sans",sans-serif;
+}
+
+.footer-p,
+.footer-p i {
+    color: #677f8b;
+    font-size: 16px;
+}
+
+.text-uppercase {
+    color: #fff;
+}
+.copyright {
+    background-color: #00095e !important;
+    color: #677f8b;
+}
